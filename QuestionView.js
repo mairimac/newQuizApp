@@ -17,9 +17,7 @@ class QuestionView extends Component {
     questions: {},
     quizzes: {},
     quizId: '',
-    currentQuestionIndex: 0,
-    currentQuestionKey:''
-
+    currentQuestionIndex: 0
   };
 
   componentDidMount() {
