@@ -17,31 +17,21 @@ class AnswerOptions extends Component {
             key = {i}
             className="btn btn-outline-dark btn-block p-2 mb-2"
                   onClick={() => {
-
-
-        this.props.handleUpdateQuestionIndex(this.props.lengthOfCurrentQuiz);
-        this.props.handleGoToFeedback(this.props.lengthOfCurrentQuiz);
-
+                    this.props.handleUpdateQuestionIndex(this.props.lengthOfCurrentQuiz);
+                    this.props.handleGoToFeedback(this.props.lengthOfCurrentQuiz);
+                      }
                     }
+              >
+        {this.props.questions[questionKey].answers[answerKey].answerText}</div>
+              )
+            }
+          )
+        }
+      </div>
+    );
 
-                    }
-                      >
-
-
-
-
-          {this.props.questions[questionKey].answers[answerKey].answerText}</div>)
-
-})}
-</div>
-
-
-
-);
-}
+  }
 
 }
-
-
 
 export default AnswerOptions;
