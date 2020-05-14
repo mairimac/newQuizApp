@@ -91,52 +91,46 @@ endOfQuiz=() => {
          }
 
     else if (this.state.hintVisible) {
-      return(
-          <div>
-            <Header/>
-            <HintScreen
-              hintText={this.state.questions[currentQuestionKey].hint}
-              closeHint={this.handleCloseHint}/>
-          </div>
-
- );
-
-}
+          return(
+              <div>
+                <Header/>
+                <HintScreen
+                  hintText={this.state.questions[currentQuestionKey].hint}
+                  closeHint={this.handleCloseHint}/>
+              </div>
+            );
+          }
 
     else {
-
-      return (
-
-        <div>
-        {currentQuizQuestions &&
+        return (
           <div>
-        <QuestionViewHeader
-        viewHint={this.handleViewHint}
-        />
+            {currentQuizQuestions &&
+              <div>
+                <QuestionViewHeader
+                  viewHint={this.handleViewHint}
+                  />
 
-        <QuestionPage
-          questionText={this.state.questions[currentQuestionKey].questionText}
-        image={this.state.questions[currentQuestionKey].image}
-        hint={this.state.questions[currentQuestionKey].hint}
-        quiz_id={this.state.quizId}/>
-        <AnswerOptions
-        handleUpdateQuestionIndex={this.updateQuestionIndex}
-        lengthOfCurrentQuiz={lengthOfCurrentQuiz}
-        handleUpdateScore={this.updateScore}
-        handleGoToFeedback={this.endOfQuiz}
-        key={this.state.questions[currentQuestionKey].id}
-        questionKey={currentQuestionKey}
-        answers={this.state.questions[currentQuestionKey].answers}
-        questions={questions}/>
+                <QuestionPage
+                  questionText={this.state.questions[currentQuestionKey].questionText}
+                  image={this.state.questions[currentQuestionKey].image}
+                  hint={this.state.questions[currentQuestionKey].hint}
+                  quiz_id={this.state.quizId}/>
 
+                <AnswerOptions
+                  handleUpdateQuestionIndex={this.updateQuestionIndex}
+                  lengthOfCurrentQuiz={lengthOfCurrentQuiz}
+                  handleUpdateScore={this.updateScore}
+                  handleGoToFeedback={this.endOfQuiz}
+                  questionKey={currentQuestionKey}
+                  answers={this.state.questions[currentQuestionKey].answers}
+                  questions={questions}/>
+                </div>
+              }
+              </div>
+            );
+          }
 
-        </div>
-
-  }
-  </div>
-);
-}
-}
+    }
 }
 
 export default QuestionView;
