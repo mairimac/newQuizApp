@@ -58,8 +58,8 @@ updateQuestionIndex = (numberOfQuestionsInQuiz) => {
   }
 };
 
-endOfQuiz=() => {
-  if (this.state.lengthOfCurrentQuiz+1 === this.state.currentQuestionIndex+1)
+endOfQuiz=(numberOfQuestionsInQuiz) => {
+  if (numberOfQuestionsInQuiz+1 === this.state.currentQuestionIndex+1)
   {
     this.setState({ goToFeedback: true})
 
